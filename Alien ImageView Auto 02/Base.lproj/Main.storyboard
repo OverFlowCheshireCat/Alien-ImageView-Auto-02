@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,90 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Alien_ImageView_Auto_02" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="he7-fW-OPa">
+                                <rect key="frame" x="67.5" y="40" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="d3i-df-EXk"/>
+                                    <constraint firstAttribute="height" constant="240" id="jN2-YR-tW4"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="RmA-A4-Rsd">
+                                <rect key="frame" x="88.5" y="300" width="198" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkj-cA-yN6">
+                                        <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="QFi-sF-e4k"/>
+                                            <constraint firstAttribute="height" constant="30" id="osZ-bb-IUs"/>
+                                        </constraints>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="czK-6V-rOx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5C3-ir-ALO">
+                                        <rect key="frame" x="76" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="hEX-uF-75b"/>
+                                            <constraint firstAttribute="height" constant="30" id="jqY-kh-fce"/>
+                                        </constraints>
+                                        <state key="normal" title="Pause"/>
+                                        <connections>
+                                            <action selector="pauseBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Nvv-8y-OYH"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbs-y9-XKP">
+                                        <rect key="frame" x="152" y="0.0" width="46" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="46" id="1Ge-8E-fhN"/>
+                                            <constraint firstAttribute="height" constant="30" id="FCz-A7-HA9"/>
+                                        </constraints>
+                                        <state key="normal" title="Stop"/>
+                                        <connections>
+                                            <action selector="stopBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xvd-1f-YhF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="7kA-2t-S7a"/>
+                                    <constraint firstAttribute="width" constant="198" id="agn-BQ-dmI"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 번 사진" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yKg-eN-cbQ">
+                                <rect key="frame" x="122" y="446" width="131" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="MHX-Ds-MsZ"/>
+                                    <constraint firstAttribute="width" constant="131" id="ldI-yu-pWO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="RmA-A4-Rsd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Eow-Gl-quY"/>
+                            <constraint firstItem="yKg-eN-cbQ" firstAttribute="top" secondItem="RmA-A4-Rsd" secondAttribute="bottom" constant="116" id="aCF-EA-AzB"/>
+                            <constraint firstItem="he7-fW-OPa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="cVi-Lc-u61"/>
+                            <constraint firstItem="RmA-A4-Rsd" firstAttribute="top" secondItem="he7-fW-OPa" secondAttribute="bottom" constant="20" id="fDE-ZF-sjN"/>
+                            <constraint firstItem="yKg-eN-cbQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rjm-Qo-7W9"/>
+                            <constraint firstItem="he7-fW-OPa" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s9Q-lV-Ztm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="countLbl" destination="yKg-eN-cbQ" id="woR-Ki-CHH"/>
+                        <outlet property="imageView" destination="he7-fW-OPa" id="UWl-yG-jIg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
